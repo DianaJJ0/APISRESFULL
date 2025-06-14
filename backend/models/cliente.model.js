@@ -1,22 +1,22 @@
-const mongoose =require('./config/database.js')
-const SchemaCliente = new mongoose.Schema({
-
-documento:{
+const mongoose =require('../config/database.js')
+const schemaCliente = new mongoose.Schema({
+    documento:{
         type: String,
-        required:[true, "El documento es obligatorio"],
-        minLength: 7 ["El documento no tiene el tamaño minimo"],
-        maxLength: 10 ["El documento es demasiado largo"],
+        minLenghth: 7,
+        maxLenghth: 10,
+        required: true,
+        unique: true
     },
-    nombreCompleto:{
-        type:String,
-        minLength: 3,
-        maxLength:150
+    nombreCompleto: {
+        type: String,
+        required: true,
+        maxLenghth: 150
     },
-    fechaNacimiento:{
-        type:Date,
-        max: Date.new
- }
- 
+    fechaNacimiento: {
+        type: Date,
+        required: true
+    }
 });
-const cliente =mongoose.model("clientes", SchemaCliente);
-modelNames.exports=cliente;
+
+const clientes = mongoose.model('clientes', schemaCliente);
+module.exports = clientes;
