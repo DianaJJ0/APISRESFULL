@@ -12,7 +12,7 @@ const app = express(); // Inicializar la aplicación
 app.use(morgan('dev'));
 // Permite recibir datos desde formularios HTML
 app.use(express.urlencoded({ extended: false }));
-// Permite recibir y entender datos en formato JSON
+// Permite recibir y entender datos en formato JSON en las peticiones
 app.use(express.json());
 
 // ----------- Modelos -----------

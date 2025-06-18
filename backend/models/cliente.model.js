@@ -23,6 +23,8 @@ const schemaCliente = new mongoose.Schema({
         match: [/^\S+@\S+\.\S+$/, 'El correo debe ser válido, vuelva a intentarlo']
     },
 }, {
+    // Configuración de opciones del esquema
+    timestamps: true, // Agrega campos de fecha de creación y actualización
     versionKey: false
 });
 

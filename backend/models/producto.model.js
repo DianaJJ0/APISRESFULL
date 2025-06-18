@@ -34,6 +34,7 @@ const schemaProducto = new mongoose.Schema({
         default: true
     }
 }, {
+    // Configuración de opciones del esquema
     timestamps: true,
     versionKey: false
 });
